@@ -1,0 +1,11 @@
+@model NoticeTypePartViewModel
+
+<fieldset class="form-group" asp-validation-class-for="RequiredCount">
+    <label asp-for="RequiredCount">@T["Required count"] <span asp-validation-for="RequiredCount"></span></label>
+    <input asp-for="RequiredCount" class="form-control" type="number" />
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="SortOrder">
+    <label asp-for="SortOrder">@T["Sort order"] <span asp-validation-for="SortOrder"></span></label>
+    <input asp-for="SortOrder" type="number" class="form-control" />
+</fieldset>
