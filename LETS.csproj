@@ -10,20 +10,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Autoroute" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.ContentFields" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.ContentLocalization" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.ContentManagement" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.Contents" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.Data.Abstractions" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.FileStorage.FileSystem" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.Indexing.Abstractions" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.Media.Abstractions" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.0.0-rc2-14193" />
-    <PackageReference Include="OrchardCore.Title" Version="1.0.0-rc2-14193" />
+    <PackageReference Include="OrchardCore.Autoroute" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.ContentFields" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.ContentLocalization" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.ContentManagement" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.Contents" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.ContentTypes.Abstractions" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.Data.Abstractions" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.FileStorage.FileSystem" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.Indexing.Abstractions" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.Media.Abstractions" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="1.0.0-rc2-14200" />
+    <PackageReference Include="OrchardCore.Title" Version="1.0.0-rc2-14200" />
   </ItemGroup>
 
 </Project>
