@@ -115,26 +115,27 @@
           "NoticeTypePart": {
             "RequiredCount": 0,
             "SortOrder": 2
-          },
-          {
-            "ContentType": "NoticeType",
-            "ContentItemId": "[js: uuid()]",
-            "DisplayText": "Announcement",
-            "Latest": true,
-            "Published": true,
-            "Owner": "[js: parameters('AdminUsername')]",
-            "Author": "[js: parameters('AdminUsername')]",
-            "TitlePart": {
-              "Title": "Announcement"
-            },
-            "AutoroutePart": {
-              "Path": "announcement"
-            },
-            "NoticeTypePart": {
-              "RequiredCount": 0,
-              "SortOrder": 3
-            }
           }
+        },
+        {
+          "ContentType": "NoticeType",
+          "ContentItemId": "[js: uuid()]",
+          "DisplayText": "Announcement",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Announcement"
+          },
+          "AutoroutePart": {
+            "Path": "announcement"
+          },
+          "NoticeTypePart": {
+            "RequiredCount": 0,
+            "SortOrder": 3
+          }
+        }
       ]
     },
     {
