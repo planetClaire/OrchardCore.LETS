@@ -1,0 +1,1 @@
+﻿CALL npm install jest jest-cli --save-dev
