@@ -1,0 +1,14 @@
+{
+  "name": "orchardcore.lets.functionaltests",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
