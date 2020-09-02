@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2"
   },
   "devDependencies": {},
   "scripts": {
