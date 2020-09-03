@@ -4,7 +4,7 @@
   "description": "Orchard Core website with LETS module enabled",
   "author": "Claire Botman",
   "website": "https://zeta.com.au",
-  "version": "1.0",
+  "version": "0.1.0",
   "issetuprecipe": true,
   "categories": [ "community" ],
   "tags": [ "community" ],
