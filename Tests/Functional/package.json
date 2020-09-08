@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "child_process": "^1.0.2",
+    "fs": "0.0.1-security",
     "jest": "^26.4.2",
-    "jest-cli": "^26.4.2"
+    "jest-cli": "^26.4.2",
+    "merge": "^1.2.1",
+    "puppeteer": "^5.2.1",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {},
   "scripts": {
