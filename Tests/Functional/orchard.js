@@ -16,13 +16,8 @@ module.exports = {
         const targetFramework = 'netcoreapp3.1';
         global._LOG_ = "";
 
-        if (fs.existsSync(dir + 'bin/release/' + targetFramework + '/' + assembly)) {
-            global.log('Application already built, skipping build');
-        }
-        else {
-            global.log('Building ...');
-            child_process.spawnSync('dotnet', ['build', '-c', 'release'], { cwd: dir });
-        }
+        global.log('Building ...');
+        child_process.spawnSync('dotnet', ['build', '-c', 'release'], { cwd: dir });
 
         if (clean === true) {
             rimraf(dir + 'App_Data', function () { global.log('App_Data deleted'); });
