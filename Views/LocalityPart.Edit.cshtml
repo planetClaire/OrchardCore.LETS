@@ -1,0 +1,6 @@
+@model LocalityPartViewModel
+
+<fieldset class="form-group" asp-validation-class-for="Postcode">
+    <label asp-for="Postcode">@T["Postcode"] <span asp-validation-for="Postcode"></span></label>
+    <input asp-for="Postcode" class="form-control"  />
+</fieldset>

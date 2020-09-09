@@ -77,11 +77,141 @@
       }
     },
     {
-      "name": "content",
-      "Data": [
+      "name": "ContentDefinition",
+      "ContentTypes": [
         {
-          "ContentType": "NoticeType",
+          "Name": "NoticeType",
+          "DisplayName": "Notice Type",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "NoticeTypePart",
+              "Name": "NoticeTypePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "Pattern": "noticetypes/{{ Model.ContentItem | display_text | slugify }}",
+                  "AllowRouteContainedItems": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Locality",
+          "DisplayName": "Locality",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "LocalityPart",
+              "Name": "LocalityPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "AutoroutePartSettings": {
+                  "Pattern": "localities/{{ ContentItem.DisplayText | slugify }}"
+                },
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "NoticeTypePart",
+          "Settings": {
+            "ContentPartSettings": {}
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "LocalityPart",
+          "Settings": {
+            "ContentPartSettings": {}
+          },
+          "ContentPartFieldDefinitionRecords": []
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "data": [
+        {
           "ContentItemId": "[js: uuid()]",
+          "ContentType": "Locality",
+          "DisplayText": "First locality",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "First locality"
+          },
+          "LocalityPart": {
+            "Postcode": "6000"
+          },
+          "AutoroutePart": {
+            "Path": "localities/first-locality",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          }
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "NoticeType",
           "DisplayText": "Offer",
           "Latest": true,
           "Published": true,
@@ -90,17 +220,21 @@
           "TitlePart": {
             "Title": "Offer"
           },
-          "AutoroutePart": {
-            "Path": "offer"
-          },
           "NoticeTypePart": {
             "RequiredCount": 1,
             "SortOrder": 1
+          },
+          "AutoroutePart": {
+            "Path": "noticetypes/offer",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
           }
         },
         {
-          "ContentType": "NoticeType",
           "ContentItemId": "[js: uuid()]",
+          "ContentType": "NoticeType",
           "DisplayText": "Request",
           "Latest": true,
           "Published": true,
@@ -109,17 +243,21 @@
           "TitlePart": {
             "Title": "Request"
           },
-          "AutoroutePart": {
-            "Path": "request"
-          },
           "NoticeTypePart": {
             "RequiredCount": 0,
             "SortOrder": 2
+          },
+          "AutoroutePart": {
+            "Path": "noticetypes/request",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
           }
         },
         {
-          "ContentType": "NoticeType",
           "ContentItemId": "[js: uuid()]",
+          "ContentType": "NoticeType",
           "DisplayText": "Announcement",
           "Latest": true,
           "Published": true,
@@ -128,12 +266,16 @@
           "TitlePart": {
             "Title": "Announcement"
           },
-          "AutoroutePart": {
-            "Path": "announcement"
-          },
           "NoticeTypePart": {
             "RequiredCount": 0,
             "SortOrder": 3
+          },
+          "AutoroutePart": {
+            "Path": "noticetypes/announcement",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
           }
         }
       ]

@@ -77,12 +77,15 @@ describe('Setup', () => {
             page.click('#SubmitButton'),
         ]);
 
+        await expect(await page.content()).toMatch('Welcome to the Orchard Framework, your site has been successfully set up');
+
         // frontend
-        await page.goto(`${basePath}/offer`);
+        
+        await page.goto(`${basePath}/noticetypes/offer`);
         await expect(await page.content()).toMatch('Offer');
-        await page.goto(`${basePath}/request`);
+        await page.goto(`${basePath}/noticetypes/request`);
         await expect(await page.content()).toMatch('Request');
-        await page.goto(`${basePath}/announcement`);
+        await page.goto(`${basePath}/noticetypes/announcement`);
         await expect(await page.content()).toMatch('Announcement');
 
         // backend
@@ -99,6 +102,17 @@ describe('Setup', () => {
         await expect(await page.content()).toMatch('Request');
         await expect(await page.content()).toMatch('Announcement');
     });
+
+    it('should setup a first locality', async () => {
+        // frontend
+        await page.goto(`${basePath}/localities/first-locality`);
+        await expect(await page.content()).toMatch('First locality');
+
+        // backend
+        await page.goto(`${basePath}/Admin/Contents/ContentItems/Locality`);
+        await expect(await page.content()).toMatch('First locality');
+    });
+
     
 
 });

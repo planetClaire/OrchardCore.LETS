@@ -24,10 +24,15 @@ namespace LETS
         }
         public override void ConfigureServices(IServiceCollection services)
         {
-            services.AddContentPart<NoticeTypePart>()
-                .UseDisplayDriver<NoticeTypePartDisplayDriver>();
+            // Notice type
+            services.AddContentPart<NoticeTypePart>().UseDisplayDriver<NoticeTypePartDisplayDriver>();
             services.AddScoped<IDataMigration, NoticeTypeMigrations>();
             services.AddSingleton<IIndexProvider, NoticeTypePartIndexProvider>();
+
+            // Locality
+            services.AddContentPart<LocalityPart>().UseDisplayDriver<LocalityPartDisplayDriver>();
+            services.AddScoped<IDataMigration, LocalityMigrations>();
+            services.AddSingleton<IIndexProvider, LocalityPartIndexProvider>();
         }
 
         public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
