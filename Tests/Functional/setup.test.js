@@ -118,5 +118,20 @@ describe('Setup', () => {
         await expect(await page.content()).toMatch('Art &amp; craft supplies');
     });
 
+    it('should add an about page', async () => {
+        await page.goto(`${basePath}/about`);
+        await expect(await page.content()).toMatch('This is your About page.');
+    });
+
+    it('should add a menu', async () => {
+        await page.goto(`${basePath}`);
+        await expect(await page.content()).toMatch('<a href="/about">About</a>');
+    });
+
+    it('should add a link to categories in the menu', async () => {
+        await page.goto(`${basePath}/categories`);
+        await expect(await page.content()).toMatch('Categories');
+    });
+
 });
 

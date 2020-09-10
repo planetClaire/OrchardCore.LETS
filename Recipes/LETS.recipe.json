@@ -279,6 +279,85 @@
               }
             }
           ]
+        },
+        {
+          "Name": "Page",
+          "DisplayName": "Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "ShowHomepageOption": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}"
+                }
+              }
+            },
+            {
+              "PartName": "FlowPart",
+              "Name": "FlowPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "Page",
+              "Name": "Page",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Paragraph",
+          "DisplayName": "Paragraph",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Paragraph",
+              "Name": "Paragraph",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -333,6 +412,23 @@
                   "Required": true,
                   "TaxonomyContentItemId": "4ndtzeaktc59b3xektg0a6w9n6",
                   "LeavesOnly": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Paragraph",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "HtmlField",
+              "Name": "Content",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Content",
+                  "Position": "0",
+                  "Editor": "Wysiwyg"
                 }
               }
             }
@@ -543,6 +639,115 @@
               }
             ],
             "TermContentType": "Category"
+          }
+        },
+        {
+          "ContentItemId": "43xdsd35f24sx5p67k5pn6vcwr",
+          "ContentType": "Page",
+          "DisplayText": "About",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "About"
+          },
+          "AutoroutePart": {
+            "Path": "about",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "44akpzpsw3w2ary9dszx6768dm",
+                "ContentItemVersionId": null,
+                "ContentType": "Paragraph",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "Owner": null,
+                "Author": "[js: parameters('AdminUsername')]",
+                "Paragraph": {
+                  "Content": {
+                    "Html": "<p>This is your About page.</p>"
+                  }
+                },
+                "FlowMetadata": {
+                  "Alignment": 3,
+                  "Size": 100
+                }
+              }
+            ]
+          },
+          "Page": {}
+        },
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "Menu",
+          "DisplayText": "Main menu",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Main menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "ContentMenuItem",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "Owner": null,
+                "Author": "[js: parameters('AdminUsername')]",
+                "ContentMenuItemPart": {
+                  "Name": "About",
+                  "SelectedContentItem": {
+                    "ContentItemIds": [
+                      "43xdsd35f24sx5p67k5pn6vcwr"
+                    ]
+                  }
+                },
+                "ContentMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "ContentMenuItem",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "Owner": null,
+                "Author": "[js: parameters('AdminUsername')]",
+                "ContentMenuItemPart": {
+                  "Name": "Categories",
+                  "SelectedContentItem": {
+                    "ContentItemIds": [
+                      "4ndtzeaktc59b3xektg0a6w9n6"
+                    ]
+                  }
+                },
+                "ContentMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
           }
         }
       ]
