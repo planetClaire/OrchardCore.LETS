@@ -165,6 +165,120 @@
               }
             }
           ]
+        },
+        {
+          "Name": "Category",
+          "DisplayName": "Category",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Category",
+              "Name": "Category",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "AllowUpdatePath": true,
+                  "ManageContainedItemRoutes": true
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Notice",
+          "DisplayName": "Notice",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Notice",
+              "Name": "Notice",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3",
+                  "Editor": "Trumbowyg"
+                },
+                "HtmlBodyPartSettings": {},
+                "HtmlBodyPartTrumbowygEditorSettings": {
+                  "Options": "{\r\n    autogrow: true,\r\n    btns: [\r\n        [\"viewHTML\"],\r\n        [\"undo\", \"redo\"],\r\n        [\"formatting\"],\r\n        [\"strong\", \"em\", \"del\"],\r\n        [\"foreColor\", \"backColor\"],\r\n        [\"superscript\", \"subscript\"],\r\n        [\"link\"],\r\n        [\"insertShortCode\"],\r\n        [\"image\"],\r\n        [\"align\"],\r\n        [\"unorderedList\", \"orderedList\"],\r\n        [\"horizontalRule\"],\r\n        [\"removeformat\"],\r\n        [\"fullscreen\"]\r\n    ],\r\n    btnsDef: {\r\n        align: {\r\n            dropdown: [\"justifyLeft\", \"justifyCenter\", \"justifyRight\", \"justifyFull\"],\r\n            ico: \"justifyLeft\"\r\n        },\r\n        image: {\r\n            dropdown: [\"insertImage\", \"base64\", \"noembed\"],\r\n            ico: \"insertImage\"\r\n        }\r\n    }\r\n}",
+                  "InsertMediaWithUrl": true
+                },
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "NoticePart",
+              "Name": "NoticePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "4"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
         }
       ],
       "ContentParts": [
@@ -181,6 +295,48 @@
             "ContentPartSettings": {}
           },
           "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "NoticePart",
+          "Settings": {
+            "ContentPartSettings": {}
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "Notice",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Photos",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Photos",
+                  "Editor": "Attached",
+                  "Position": "0"
+                },
+                "ContentIndexSettings": {},
+                "MediaFieldSettings": {}
+              }
+            },
+            {
+              "FieldName": "TaxonomyField",
+              "Name": "Category",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Category",
+                  "Position": "1"
+                },
+                "ContentIndexSettings": {},
+                "TaxonomyFieldSettings": {
+                  "Required": true,
+                  "TaxonomyContentItemId": "4ndtzeaktc59b3xektg0a6w9n6",
+                  "LeavesOnly": true
+                }
+              }
+            }
+          ]
         }
       ]
     },
@@ -276,6 +432,117 @@
             "Disabled": false,
             "RouteContainedItems": false,
             "Absolute": false
+          }
+        },
+        {
+          "ContentItemId": "4ndtzeaktc59b3xektg0a6w9n6",
+          "ContentItemVersionId": "4dx9xncjrm4zyzye0zqqarb1d8",
+          "ContentType": "Taxonomy",
+          "DisplayText": "Categories",
+          "Latest": true,
+          "Published": true,
+          "Owner": "[js: parameters('AdminUsername')]",
+          "Author": "[js: parameters('AdminUsername')]",
+          "TitlePart": {
+            "Title": "Categories"
+          },
+          "AliasPart": {
+            "Alias": "categories"
+          },
+          "AutoroutePart": {
+            "Path": "categories",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": true,
+            "Absolute": false
+          },
+          "TaxonomyPart": {
+            "Terms": [
+              {
+                "ContentItemId": "4hdmz8kwmstbvt3ab1vmrmnm4c",
+                "ContentItemVersionId": null,
+                "ContentType": "Category",
+                "DisplayText": "Buy & Sell",
+                "Latest": false,
+                "Published": false,
+                "Owner": "[js: parameters('AdminUsername')]",
+                "Author": "[js: parameters('AdminUsername')]",
+                "Category": {},
+                "AutoroutePart": {
+                  "Path": "buy-sell",
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false
+                },
+                "TitlePart": {
+                  "Title": "Buy & Sell"
+                },
+                "TermPart": {
+                  "TaxonomyContentItemId": "4ndtzeaktc59b3xektg0a6w9n6"
+                },
+                "@WeldedPartSettings": {
+                  "TermPart": {}
+                },
+                "Terms": [
+                  {
+                    "ContentItemId": "4q9snenzcxpgg0bs3sjtnncycy",
+                    "ContentItemVersionId": null,
+                    "ContentType": "Category",
+                    "DisplayText": "Art & craft supplies",
+                    "Latest": false,
+                    "Published": false,
+                    "Owner": "[js: parameters('AdminUsername')]",
+                    "Author": "[js: parameters('AdminUsername')]",
+                    "Category": {},
+                    "AutoroutePart": {
+                      "Path": "art-craft-supplies",
+                      "SetHomepage": false,
+                      "Disabled": false,
+                      "RouteContainedItems": false,
+                      "Absolute": false
+                    },
+                    "TitlePart": {
+                      "Title": "Art & craft supplies"
+                    },
+                    "TermPart": {
+                      "TaxonomyContentItemId": "4ndtzeaktc59b3xektg0a6w9n6"
+                    },
+                    "@WeldedPartSettings": {
+                      "TermPart": {}
+                    }
+                  }
+                ]
+              },
+              {
+                "ContentItemId": "41jy5m8sdjg7s7s3mggqw1d8dm",
+                "ContentItemVersionId": null,
+                "ContentType": "Category",
+                "DisplayText": "Services & skills",
+                "Latest": false,
+                "Published": false,
+                "Owner": "[js: parameters('AdminUsername')]",
+                "Author": "[js: parameters('AdminUsername')]",
+                "Category": {},
+                "AutoroutePart": {
+                  "Path": "services-skills",
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false
+                },
+                "TitlePart": {
+                  "Title": "Services & skills"
+                },
+                "TermPart": {
+                  "TaxonomyContentItemId": "4ndtzeaktc59b3xektg0a6w9n6"
+                },
+                "@WeldedPartSettings": {
+                  "TermPart": {}
+                }
+              }
+            ],
+            "TermContentType": "Category"
           }
         }
       ]

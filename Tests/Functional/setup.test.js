@@ -113,7 +113,10 @@ describe('Setup', () => {
         await expect(await page.content()).toMatch('First locality');
     });
 
-    
+    it('should setup initial categories', async () => {
+        await page.goto(`${basePath}/categories/buy-sell/art-craft-supplies`);
+        await expect(await page.content()).toMatch('Art &amp; craft supplies');
+    });
 
 });
 
