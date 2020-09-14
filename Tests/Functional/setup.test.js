@@ -133,5 +133,10 @@ describe('Setup', () => {
         await expect(await page.content()).toMatch('Categories');
     });
 
+    it('should setup a Notice content type', async () => {
+        await page.goto(`${basePath}/admin/Contents/ContentTypes/Notice/Create`);
+        await expect(await page.content()).toMatch('New Notice');
+    });
+
 });
 
