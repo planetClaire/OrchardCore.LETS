@@ -138,5 +138,42 @@ describe('Setup', () => {
         await expect(await page.content()).toMatch('New Notice');
     });
 
+    it('should allow a user to register', async () => {
+        await Promise.all([
+            page.waitForNavigation(),
+            (await page.$x("//button[contains(text(), 'Log off')]"))[0].click()
+        ]);
+        await page.goto(`${basePath}/categories`);
+        await expect(await page.content()).toMatch('Categories');
+        await page.goto(`${basePath}/register`);
+        await expect(await page.content()).toMatch('Register');
+    });
+
+    it('should display a message on registration asking user to check email', async () => {
+        await page.type('#UserName', 'user');
+        await page.type('#Email', 'email@example.com');
+        await page.type('#Password', 'Demo123!');
+        await page.type('#ConfirmPassword', 'Demo123!');
+        await Promise.all([
+            page.waitForNavigation(),
+            page.keyboard.press('Enter')
+        ]);
+        await expect(await page.content()).toMatch('Please check your email for a verification link');
+    });
+
+    it('should not allow unverified users to login', async () => {
+        await page.goto(`${basePath}/login`);
+        await page.type('#UserName', 'user');
+        await page.type('#Password', 'Demo123!');
+        await Promise.all([
+            page.waitForNavigation(),
+            page.keyboard.press('Enter')
+        ]);
+        await expect(await page.content()).toMatch('You must confirm your email');
+    });
+
+    it('should allow users to reset password', async () => {
+        await expect(await page.content()).toMatch('Forgot your password?');
+    });
 });
 

@@ -57,6 +57,10 @@
         "OrchardCore.Title",
         "OrchardCore.Templates",
         "OrchardCore.Widgets",
+        "OrchardCore.Users.ChangeEmail",
+        "OrchardCore.Users.Registration",
+        "OrchardCore.Users.ResetPassword",
+        "OrchardCore.Workflows",
         // Themes
         "TheTheme",
         "TheAdmin",
@@ -80,6 +84,33 @@
           "Header",
           "Messages",
           "Footer"
+        ]
+      },
+      "RegistrationSettings": {
+        "UsersCanRegister": 1,
+        "UsersMustValidateEmail": true,
+        "UseSiteTheme": true,
+        "NoPasswordForExternalUsers": false,
+        "NoUsernameForExternalUsers": false,
+        "NoEmailForExternalUsers": false,
+        "UseScriptToGenerateUsername": false,
+        "GenerateUsernameScript": null
+      },
+      "LoginSettings": {
+        "UseSiteTheme": true,
+        "UseExternalProviderIfOnlyOneDefined": false,
+        "DisableLocalLogin": false,
+        "UseScriptToSyncRoles": false,
+        "SyncRolesScript": null
+      },
+      "ResetPasswordSettings": {
+        "AllowResetPassword": true,
+        "UseSiteTheme": true
+      },
+      "LuceneSettings": {
+        "SearchIndex": "Search",
+        "DefaultSearchFields": [
+          "Content.ContentItem.FullText"
         ]
       }
     },
@@ -719,16 +750,6 @@
       ]
     },
     {
-      // Create the search settings.
-      "name": "Settings",
-      "LuceneSettings": {
-        "SearchIndex": "Search",
-        "DefaultSearchFields": [
-          "Content.ContentItem.FullText"
-        ]
-      }
-    },
-    {
       // Create the search index permissions.
       "name": "Roles",
       "Roles": [
@@ -738,6 +759,56 @@
           "Permissions": [
             "ViewContent",
             "QueryLuceneSearchIndex"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowType",
+      "data": [
+        {
+          "WorkflowTypeId": "[js: uuid()]",
+          "Name": "UserRegistered",
+          "IsEnabled": true,
+          "IsSingleton": false,
+          "DeleteFinishedWorkflows": false,
+          "Activities": [
+            {
+              "ActivityId": "45pxhca7gcynv5tdx5jbvc6c4z",
+              "Name": "UserCreatedEvent",
+              "X": 0,
+              "Y": 10,
+              "IsStart": true,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": null
+                }
+              }
+            },
+            {
+              "ActivityId": "4b1s3vf4ymaqrwaea9cn8z84w1",
+              "Name": "NotifyTask",
+              "X": 40,
+              "Y": 130,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Show verification prompt"
+                },
+                "NotificationType": 1,
+                "Message": {
+                  "Expression": "Please check your email for a verification link"
+                }
+              }
+            }
+          ],
+          "Transitions": [
+            {
+              "Id": 0,
+              "SourceActivityId": "45pxhca7gcynv5tdx5jbvc6c4z",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4b1s3vf4ymaqrwaea9cn8z84w1"
+            }
           ]
         }
       ]
@@ -1044,6 +1115,21 @@
                   }
                 },
                 "ContentMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js: uuid()]",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "Owner": null,
+                "Author": "[js: parameters('AdminUsername')]",
+                "LinkMenuItemPart": {
+                  "Name": "Become a member",
+                  "Url": "/register"
+                },
+                "LinkMenuItem": {}
               }
             ]
           },
